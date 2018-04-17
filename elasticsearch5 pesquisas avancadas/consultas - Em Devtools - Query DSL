@@ -1,0 +1,171 @@
+## Links úteis
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#date-math
+https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html
+
+
+## Consultas
+
+GET /produtos/v1/_search?q=digital
+
+
+GET /produtos/v1/_search
+{
+  "query": {
+    "match_all": {
+      
+    }
+  }
+}
+
+
+GET /produtos/v1/_search
+{
+  "query": {
+    "match": {
+      "categoria": "calçados"
+    }
+  }
+}
+
+
+GET /produtos/v1/_search
+{
+  "query": {
+    "match": {
+      "tags": "digital"
+    }
+  }
+}
+
+
+GET /produtos/v1/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+          {"match": {"tags": "impresso"}},
+          {"match": {"nome": "scala"}}
+        ]
+    }
+  }
+}
+
+
+GET /produtos/v1/_search
+{
+  "query": {
+    "bool": {
+      "must": {"match": {"categoria": "livro"}},
+      "should": [
+        {"match": {"tags": "imutabilidade"}},
+        {"match": {"tags": "larga escala"}}
+      ],
+      "must_not": {"match": {"nome": "scala"}}
+    }
+  }
+}
+
+
+
+GET /produtos/v1/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+          {"match": {"categoria": "livros"}},
+          {"match": {"tags": "esporte"}}
+        ]
+    }
+  }
+}
+
+
+
+GET /produtos/v1/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+          {"match": {"categoria": "livros"}}
+        ],
+      "must_not": {"match": {"tags": "computação"}}
+    }
+  }
+}
+
+
+GET /produtos/v1/_search
+{
+  "query" : {
+    "bool": {
+      "must": {
+        "match": {
+          "tags": "futebol"
+        }
+      },
+      "filter": {
+        "bool": {
+          "must": [
+            {"range": {"preco": {"lte": 100}}},
+            {"term": {"categoria.original": "Livros"}}
+          ]
+        }
+      }
+    }
+  }
+}
+
+
+GET /produtos/v1/_search
+{
+  "query" : {
+    "range": {
+      "preco": {
+        "lte": 50,
+        "gte": 20
+      }
+    }
+  }
+}
+
+
+GET /produtos/v1/_search
+{
+  "query" : {
+    "range": {
+      "preco": {
+        "gte": 50
+      }
+    }
+  }
+}
+
+
+GET /produtos/v1/_search
+{
+  "query" : {
+    "bool": {
+      "must": {
+        "match": {"tags": "esportes"}},
+      "filter": {
+        "bool": {
+          "must": [
+            {"range": {"preco": {"lte": 100}}},
+            {"term": {"categoria.original": "Livros"}}
+]}}}}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

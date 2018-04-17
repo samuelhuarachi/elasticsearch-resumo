@@ -1,0 +1,3 @@
+categoria:(calçados OR roupas)
+tags:(computacao futebol)
+tags:impresso AND nome:scala
