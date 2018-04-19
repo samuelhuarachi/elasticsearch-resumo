@@ -1,0 +1,6 @@
+
+
+Você sabia que podemos validar uma query ou mesmo entender como ela será executada? Este é um recurso muito útil para saber se uma consulta vai ser muito custosa para o cluster e se pode ser melhorada. Veja a documentação oficial:
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html.
+

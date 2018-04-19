@@ -1,0 +1,41 @@
+GET /produtos/v1/_search
+{
+  "query": {
+    "match": {
+      "nome": {
+        "query" : "big data futebol brasileiro",
+        "minimum_should_match": "50%"
+      }
+    }
+  }
+}
+
+___________________________________________________________________________
+
+Você também pode utilizar o número inteiro como valor para minimum_should_match, por exemplo podemos definir que queremos encontrar 2 palavras de 3 possíveis:
+
+GET /produtos/v1/_search
+{
+  "query" : {
+    "match": {
+      "nome": {
+        "query" : "big futebol brasileiro",
+        "minimum_should_match": "2"
+}}}}
+
+
+___________________________________________________________________________
+
+Elasticsearch nos permite usar o mesmo termo para buscar em vários campos sem que precisemos copiar e colar a consulta para cada campo. Esta funcionalidade é conhecida como busca cross campo.
+
+Veja o link da documentação:
+
+https://www.elastic.co/guide/en/elasticsearch/guide/master/_cross_fields_entity_search.html
+
+
+
+
+
+
+
+

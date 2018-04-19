@@ -1,0 +1,1 @@
+GET /_analyze?analyzer=portuguese&text=Big Data: Técnicas e tecnologias para extração de valor dos dados

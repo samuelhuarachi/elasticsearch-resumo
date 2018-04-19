@@ -1,0 +1,16 @@
+GET /produtos/v1/_search
+{
+  "query" : {
+    "bool": {
+      "should":[
+        {"match": {"nome": "chuteira"}},
+        {"match": {"nome": { 
+                      "query": "camiseta",
+                      "boost": 0.8 }
+                  }
+        }
+      ]
+    }
+  }
+}
+
