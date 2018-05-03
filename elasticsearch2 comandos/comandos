@@ -187,6 +187,50 @@ PUT /indice_com_sinonimo_2
 
 =====================================================
 
+/catalogo/pessoas/_search?q=_all:futebol
+/catalogo/pessoas/_search?q=estado:SP
+http://127.0.0.1:9200/catalogo/pessoas/_search?q=futebol&size=10&from=1  --> retorna no máximo 10 resultados, apartir(from) do
+primeiro documento
+
+
+
+{
+    "took": 7,                        ===> quanto tempo levou em milisegundos
+    "timed_out": false,               ===> essa consulta excedeu o tempo limite
+    "_shards": {
+        "total": 5,                   ===> quantas shards foram atingindas da busca
+        "successful": 5,              ===> quantas shards retornaram resultado
+        "failed": 0                   ===> quantas shards falharam
+    },
+    "hits": {                         ===> objeto hits informação do resultado em si   
+        "total": 10,                  ===> total de registros encontrados
+        "max_score": 0.24276763,      ===> relevância ou valor da semelhança, valor entre 0 e 1
+        "hits": [
+            {
+                "_index": "catalogo",
+                "_type": "pessoas",
+                "_id": "AWMnEQmj9evLcDBVZjHX",
+                "_score": 0.24276763,
+                "_source": {
+                    "nome": "João Silva",
+                    "interesses": [
+                        "futebol",
+                        "música",
+                        "literatura"
+                    ],
+                    "cidade": "São Paulo",
+                    "formação": "Letras",
+                    "estado": "SP",
+                    "país": "Brasil"
+                }
+            },
+
+=====================================================
+
+
+
+
+
 
 
 

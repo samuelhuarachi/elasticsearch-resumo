@@ -1,1 +1,71 @@
 http://127.0.0.1:9200/_cat/indices?v
+
+http://127.0.0.1:9200/catalogo/pessoas/_count
+
+http://127.0.0.1:9200/catalogo/pessoas/_search
+
+http://127.0.0.1:9200/catalogo/pessoas/_search?q=futebol
+
+curl -XHEAD -v http://localhost:9200/catalogo/pessoas/1
+
+http://127.0.0.1:9200/wspot_2018_03/radacct/5ad4e9544ff3c
+
+
+
+------------------------------------------------------------------------
+PUT - 
+- criação com um id especifico
+- atualização do objeto completo
+
+------------------------------------------------------------------------
+POST -
+- Sem identificador insert com auto increment
+- Com indentificador 
+	* atualização parcial do documento, ou 
+	* crie ou atualize esse documento
+
+POST /catalogo/pessoas/1/_update
+{
+	"doc": {
+		"nome": "João Pedro"
+	}
+}
+------------------------------------------------------------------------
+
+
+meus indexs:
+radius_policy_2018_04
+wspot_2018_04
+.kibana
+log
+wspotv3
+catalogo
+wspot_2018_03
+wspot_2018_02
+
+
+------------------------------------------------------------------------
+PUT http://127.0.0.1:9200/catalogo/pessoas/2
+{
+	"nome": "Thadeu",
+	"interesses": [
+		"futebol",
+		"música",
+		"programação"
+	],
+	"cidade": "Toronto",
+	"formação": "Ciências da Computação",
+	"estado": "ON",
+	"país": "Canadá"
+}
+------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
